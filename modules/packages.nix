@@ -39,33 +39,7 @@ let
   # Discretionary packages - can be excluded by user
   discretionaryPackages =
     with pkgs;
-    [
-      # TUIs
-      lazygit
-      lazydocker
-      btop
-      powertop
-      fastfetch
-
-      # GUIs
-      chromium
-      obsidian
-      vlc
-      signal-desktop
-
-      # Development tools
-      github-desktop
-      gh
-
-      # Containers
-      docker-compose
-      ffmpeg
-    ]
-    ++ lib.optionals (pkgs.system == "x86_64-linux") [
-      typora
-      dropbox
-      spotify
-    ];
+    [ ];
 
   # Only allow excluding discretionary packages to prevent breaking the system
   filteredDiscretionaryPackages = lib.lists.subtractLists exclude_packages discretionaryPackages;
